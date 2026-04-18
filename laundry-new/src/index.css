@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #154a97;
+  --color-primary-dark: #103e81;
+  --color-secondary: #2dc3f0;
+  --color-bg: #eaf4fb;
+  --color-surface: #ffffff;
+  --color-soft: #f8fbff;
+  --color-text: #1f3f77;
+  --color-text-light: #5d7396;
+  --color-border: #d6e4f3;
+  --color-danger: #ff3a3a;
+  --color-shadow: 0 12px 30px rgba(21, 74, 151, 0.12);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --container: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", "Inter", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.container-custom {
+  width: min(100% - 32px, var(--container));
+  margin-inline: auto;
+}
+
+.section-space {
+  padding-block: 80px;
+}
+
+.card-shadow {
+  box-shadow: var(--color-shadow);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.text-muted {
+  color: var(--color-text-light);
+}
+
+.bg-main {
+  background: var(--color-bg);
+}
+
+.bg-surface {
+  background: var(--color-surface);
+}
+
+.text-main {
+  color: var(--color-text);
+}
+
+.text-brand {
+  color: var(--color-primary);
+}
+
+.border-soft {
+  border: 1px solid var(--color-border);
+}
+
+.title-xl {
+  font-size: clamp(2.2rem, 4vw, 4.5rem);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.title-lg {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.title-md {
+  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.title-sm {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.eyebrow {
+  color: #ff4b4b;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.site-transition {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+}
+
+.footer-line {
+  border-top: 1px solid #8eaad0;
+}
+
+.input-ui {
+  width: 100%;
+  border: 1px solid transparent;
+  background: #edf3fb;
+  color: var(--color-text);
+  border-radius: 10px;
+  padding: 14px 16px;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.input-ui:focus {
+  border-color: var(--color-secondary);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(45, 195, 240, 0.12);
+}
+
+.icon-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  background: white;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--color-shadow);
+}
+
+.blue-panel {
+  background: linear-gradient(180deg, #0e458f 0%, #0a3b7a 100%);
+  color: #fff;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 24px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 24px rgba(21, 74, 151, 0.22);
+}
+
+.primary-btn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  background: white;
+  color: var(--color-primary);
+  border-radius: 999px;
+  width: 52px;
+  height: 52px;
+  transition: 0.25s ease;
+  box-shadow: var(--color-shadow);
+}
+
+.secondary-btn:hover {
+  transform: translateY(-2px);
+  background: #f7fbff;
+}
+
+@media (max-width: 767px) {
+  .section-space {
+    padding-block: 56px;
+  }
+
+  .container-custom {
+    width: min(100% - 24px, var(--container));
+  }
+  .service-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+/* Hide scrollbar for all browsers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}}

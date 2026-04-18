@@ -1,0 +1,18 @@
+<svg width="47" height="48" viewBox="0 0 47 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_40_1139)">
+<ellipse cx="23.4997" cy="23.6259" rx="18.6893" ry="18.5896" transform="rotate(-90 23.4997 23.6259)" fill="#0E438E"/>
+</g>
+<path d="M25 25.5H27.5L28.5 21.5H25V19.5C25 18.47 25 17.5 27 17.5H28.5V14.14C28.174 14.097 26.943 14 25.643 14C22.928 14 21 15.657 21 18.7V21.5H18V25.5H21V34H25V25.5Z" fill="white"/>
+<defs>
+<filter id="filter0_i_40_1139" x="4.91016" y="4.93677" width="42.0896" height="37.3784" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4.91045"/>
+<feGaussianBlur stdDeviation="7.01493"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_40_1139"/>
+</filter>
+</defs>
+</svg>

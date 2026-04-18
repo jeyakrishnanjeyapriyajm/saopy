@@ -1,0 +1,102 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { useSubmitContactFormMutation } from "../api/contactApi";
+
+export default function useContactForm(options = {}) {
+  const {
+    redirectTo = "/thank-you",
+    resetAfterSubmit = true,
+    closeAfterSubmit = null,
+  } = options;
+
+  const navigate = useNavigate();
+  const [submitContactForm, { isLoading }] = useSubmitContactFormMutation();
+  const [formData, setFormData] = useState({
+    full_name: "",
+    phone_number: "",
+    email: "",
+    service_type: "Wash & Fold",
+    pickup_address: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const setField = (name, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const resetForm = () => {
+    setFormData({
+      full_name: "",
+      phone_number: "",
+      email: "",
+      service_type: "Wash & Fold",
+      pickup_address: "",
+      message: "",
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      full_name: formData.full_name.trim(),
+      phone_number: formData.phone_number.trim(),
+      email: formData.email.trim(),
+      service_type: formData.service_type.trim(),
+      pickup_address: formData.pickup_address.trim(),
+      message: formData.message.trim(),
+    };
+
+    if (
+      !payload.full_name ||
+      !payload.phone_number ||
+      !payload.email ||
+      !payload.service_type ||
+      !payload.pickup_address ||
+      !payload.message
+    ) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+
+    try {
+      const result = await submitContactForm(payload).unwrap();
+
+      toast.success(result?.message || "Your request has been sent successfully.");
+
+      if (resetAfterSubmit) resetForm();
+      if (typeof closeAfterSubmit === "function") closeAfterSubmit();
+
+      if (redirectTo) {
+        setTimeout(() => {
+          navigate(redirectTo);
+        }, 1000);
+      }
+    } catch (error) {
+      toast.error(
+        error?.data?.message || error?.message || "Something went wrong."
+      );
+    }
+  };
+
+  return {
+    formData,
+    handleChange,
+    handleSubmit,
+    isSubmitting: isLoading,
+    resetForm,
+    setField,
+  };
+}
