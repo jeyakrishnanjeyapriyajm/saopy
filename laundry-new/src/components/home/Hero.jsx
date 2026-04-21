@@ -105,10 +105,7 @@ export default function Hero() {
                   className="mx-auto mt-5 max-w-[640px] text-sm leading-7 text-main sm:mt-6 sm:text-base md:text-lg md:leading-8 lg:mx-0"
                   style={{ color: "var(--color-text)" }}
                 >
-                  Trusted laundry care with modern convenience. From everyday
-                  garments to bedding and delicate fabrics, we deliver spotless
-                  cleaning, expert handling, and reliable pickup across
-                  Coventry.
+                  A Highly Recommended & Much Loved Laundry Service in Coventry
                 </motion.p>
 
                 <motion.div

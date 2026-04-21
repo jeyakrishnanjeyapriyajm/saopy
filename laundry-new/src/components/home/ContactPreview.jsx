@@ -35,7 +35,7 @@ export default function ContactPreview() {
                   </div>
                   <div>
                     <p className="text-sm text-white/80">Phone</p>
-                    <p className="text-lg text-white">02476502101</p>
+                    <p className="text-lg text-white">+44 7731830701</p>
                   </div>
                 </div>
 
@@ -47,7 +47,7 @@ export default function ContactPreview() {
                   <div>
                     <p className="text-sm text-white/80">Email</p>
                     <p className="text-lg text-white break-all">
-                      info.soapysudsshine@gmail.com
+                      soapysudsshinelaundry@gmail.com
                     </p>
                   </div>
                 </div>
@@ -73,11 +73,11 @@ export default function ContactPreview() {
                 <div className="mt-4 space-y-2 text-white/90">
                   <div className="flex justify-between">
                     <span>Mon–Fri</span>
-                    <span>7:30 am – 14:00 pm</span>
+                    <span>7:30 – 14:00</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Saturday</span>
-                    <span>8:00 am – 16:00 pm</span>
+                    <span>8:00 – 16:00</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Sunday</span>

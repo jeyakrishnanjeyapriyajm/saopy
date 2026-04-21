@@ -49,17 +49,19 @@ export const services = [
       "Perfect for busy homes and businesses",
     ],
   },
-  {
-    id: 3,
-    title: "Wash & Fold",
-    image: service3,
-    desc: "Everyday laundry service for clothing and household items, professionally washed, dried, and neatly folded.",
-    bullets: [
-      "Cleaned with care",
-      "Neatly folded and packed",
-      "Ideal for regular laundry needs",
-    ],
-  },
+ {
+  id: 3,
+  title: "Self wash and dry",
+  image: service3,
+  desc: `We welcome all our amazing customers to visit our launderette and enjoy a self-service laundry experience in a friendly and relaxing environment.
+  
+Wash your clothes yourself, use your own detergent, and dry them at your convenience. With good music, a warm atmosphere, and coffee available, we aim to make your laundry experience comfortable and enjoyable.`,
+  bullets: [
+    "Cleaned with care",
+   
+  ],
+},
+
   {
     id: 4,
     title: "Express Service",
@@ -82,6 +84,7 @@ export const services = [
       "Neat, professional presentation",
     ],
   },
+
 ];
 
 export const flowSteps = [

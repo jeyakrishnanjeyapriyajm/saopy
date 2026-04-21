@@ -44,12 +44,14 @@ export default function Footer() {
 
               <div className="flex items-center gap-3">
                 <FiPhone className="h-5 w-5 text-brand" />
-                <span>WhatsApp: +44 7731 830701</span>
+                <span>WhatsApp: +44 7731830701</span>
               </div>
 
               <div className="flex items-center gap-3">
                 <FiMail className="h-5 w-5 text-brand" />
-                <span className="break-all">info.soapysudsshine@gmail.com</span>
+                <span className="break-all">
+                  soapysudsshinelaundry@gmail.com
+                </span>
               </div>
             </div>
           </div>
@@ -96,26 +98,18 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-10 border-t border-slate-300 py-5 text-center text-xs text-muted mb-20">
-          © 2026 Soapy. All rights reserved. Povered by{" "}
-          <a
-            href="https://tetravi.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-brand hover:underline"
-          >
-            Tetra Vi
-          </a>
+          © 2026 Soapy. All rights reserved.
         </div>
       </div>
 
-      {/* Background Text */}
+      {/* Background Text
       <div className="pointer-events-none absolute bottom-[-10px] left-0 w-full overflow-hidden sm:bottom-[-20px] md:bottom-[-35px] lg:bottom-[-50px]">
         <div className="flex justify-center px-4">
           <h2 className="text-center font-extrabold leading-none tracking-tight text-brand/10 text-[48px] xs:text-[60px] sm:text-[90px] md:text-[120px] lg:text-[160px]">
             Soapy Suds
           </h2>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 }
