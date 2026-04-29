@@ -24,7 +24,7 @@ export default function ThankYou() {
         className="w-full max-w-[640px] overflow-hidden rounded-[28px] border border-border bg-surface shadow-lg"
       >
         {/* 🔥 Logo Header */}
-        <div className="flex flex-col items-center justify-center border-b border-border px-6 py-6">
+        <div className="pt-20 flex flex-col items-center justify-center border-b border-border px-6 py-6">
           <img src={logo} alt="Logo" className="h-12 w-auto object-contain" />
         </div>
 

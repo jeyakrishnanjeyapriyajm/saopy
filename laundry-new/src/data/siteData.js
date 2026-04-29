@@ -24,89 +24,109 @@ import {
   userProfile,
 } from "../assets";
 
-
+export const seoContent = {
+  homeTitle: "Professional Laundry Service in Coventry, UK",
+  homeSubtitle:
+    "Commercial and domestic laundry services with pickup and delivery for homes, hotels, restaurants, care homes, schools, sports clubs, and businesses.",
+  metaTitle:
+    "Laundry Service Coventry UK | Commercial Laundry Pickup & Delivery",
+  metaDescription:
+    "Professional laundry service in Coventry, UK. We provide commercial laundry, ironing, wash and dry, express service, and pickup and delivery for homes and businesses.",
+  keywords: [
+    "laundry service Coventry",
+    "commercial laundry service UK",
+    "laundry pickup and delivery Coventry",
+    "hotel laundry service UK",
+    "restaurant laundry service UK",
+    "care home laundry service",
+    "uniform laundry service UK",
+    "bulk laundry Coventry",
+    "ironing service Coventry",
+    "express laundry service Coventry",
+  ],
+};
 
 export const services = [
   {
     id: 1,
-    title: "Blankets & Covers",
+    title: "Blankets & Covers Laundry",
     image: service1,
-    desc: "Deep cleaning for blankets, duvets, bed covers, and other bulky household fabrics with proper care and freshness.",
+    desc: "Professional cleaning for blankets, duvets, bed covers, bedding, and bulky household fabrics. Ideal for homes, hotels, guest houses, and care facilities in Coventry.",
     bullets: [
-      "Careful cleaning for heavy fabrics",
-      "Fresh smell and hygienic finish",
-      "Safe process for soft materials",
+      "Deep cleaning for blankets, duvets, and bedding",
+      "Fresh, hygienic, and neatly finished results",
+      "Suitable for homes, hotels, and guest accommodation",
     ],
   },
   {
     id: 2,
-    title: "Pickup & Delivery",
+    title: "Laundry Pickup & Delivery",
     image: service2,
-    desc: "Convenient collection and doorstep delivery service designed to save your time and make laundry easy.",
+    desc: "Convenient laundry pickup and delivery service in Coventry for busy families, professionals, hotels, restaurants, and local businesses.",
     bullets: [
-      "Easy doorstep pickup",
-      "Timely and reliable delivery",
-      "Perfect for busy homes and businesses",
+      "Easy doorstep laundry collection",
+      "Reliable drop-off after cleaning",
+      "Perfect for domestic and commercial customers",
     ],
   },
- {
-  id: 3,
-  title: "Self wash and dry",
-  image: service3,
-  desc: `We welcome all our amazing customers to visit our launderette and enjoy a self-service laundry experience in a friendly and relaxing environment.
-  
-Wash your clothes yourself, use your own detergent, and dry them at your convenience. With good music, a warm atmosphere, and coffee available, we aim to make your laundry experience comfortable and enjoyable.`,
-  bullets: [
-    "Cleaned with care",
-   
-  ],
-},
-
+  {
+    id: 3,
+    title: "Self Wash and Dry",
+    image: service3,
+    desc: "Visit our Coventry launderette and enjoy a clean, friendly, and relaxing self-service wash and dry experience. Bring your own detergent, wash at your convenience, and enjoy a comfortable environment.",
+    bullets: [
+      "Clean and easy-to-use self-service laundry",
+      "Wash and dry at your own convenience",
+      "Friendly launderette environment in Coventry",
+    ],
+  },
   {
     id: 4,
-    title: "Express Service",
+    title: "Express Laundry Service",
     image: service4,
-    desc: "Fast turnaround laundry solution when you need your garments cleaned and returned as quickly as possible.",
+    desc: "Fast turnaround laundry service for customers who need clothes, uniforms, towels, bedding, or business laundry cleaned quickly and professionally.",
     bullets: [
-      "Quick processing time",
-      "Reliable urgent service",
-      "Great for last-minute needs",
+      "Quick laundry turnaround",
+      "Ideal for urgent clothing and uniforms",
+      "Reliable service for homes and businesses",
     ],
   },
   {
     id: 5,
     title: "Ironing Service",
     image: service5,
-    desc: "Professional ironing and finishing for clothes, uniforms, and other fabric items for a crisp, polished look.",
+    desc: "Professional ironing service for shirts, trousers, dresses, uniforms, workwear, table linens, and everyday clothing with a crisp, neat finish.",
     bullets: [
-      "Wrinkle-free finishing",
+      "Wrinkle-free ironing and finishing",
       "Suitable for uniforms and daily wear",
-      "Neat, professional presentation",
+      "Smart presentation for homes and businesses",
     ],
   },
-
 ];
 
 export const flowSteps = [
   {
     id: 1,
-    title: "Book Your Service",
+    title: "Book Your Laundry Service",
+    desc: "Choose your laundry service and schedule a convenient pickup, delivery, or drop-off time in Coventry.",
     description:
-      "Choose your service and schedule a convenient pickup or drop-off time.",
+      "Choose your laundry service and schedule a convenient pickup, delivery, or drop-off time in Coventry.",
     image: serviceFlow1,
   },
   {
     id: 2,
     title: "We Clean With Care",
+    desc: "Your clothes, linens, towels, uniforms, and bedding are cleaned using the right process for each fabric.",
     description:
-      "Your garments are sorted, cleaned, and treated using the right process for each fabric.",
+      "Your clothes, linens, towels, uniforms, and bedding are cleaned using the right process for each fabric.",
     image: serviceFlow2,
   },
   {
     id: 3,
-    title: "Fresh Delivery",
+    title: "Fresh Pickup or Delivery",
+    desc: "Your laundry is returned clean, fresh, neatly packed, and ready to use at home or in your business.",
     description:
-      "Your items are packed neatly and returned fresh, clean, and ready to use.",
+      "Your laundry is returned clean, fresh, neatly packed, and ready to use at home or in your business.",
     image: serviceFlow3,
   },
 ];
@@ -114,45 +134,102 @@ export const flowSteps = [
 export const whyChooseData = [
   {
     id: 1,
-    title: "Premium Fabric Care",
+    title: "Commercial Laundry Experts",
+    desc: "Trusted laundry solutions for hotels, care homes, restaurants, schools, sports clubs, and local businesses.",
     description:
-      "We treat every garment with the right cleaning method for long-lasting freshness and quality.",
+      "Trusted laundry solutions for hotels, care homes, restaurants, schools, sports clubs, and local businesses.",
     icon: care,
   },
   {
     id: 2,
-    title: "Eco Friendly Process",
+    title: "Hygienic Cleaning Standards",
+    desc: "We focus on fresh, clean, and hygienic laundry care for clothing, bedding, towels, linens, and uniforms.",
     description:
-      "Our cleaning process is designed to be safer for your clothes and kinder to the environment.",
+      "We focus on fresh, clean, and hygienic laundry care for clothing, bedding, towels, linens, and uniforms.",
     icon: eco,
   },
   {
     id: 3,
-    title: "Friendly Service",
+    title: "Friendly Local Service",
+    desc: "A helpful Coventry laundry team offering smooth booking, clear communication, and reliable customer care.",
     description:
-      "From booking to delivery, we focus on a smooth and helpful customer experience.",
+      "A helpful Coventry laundry team offering smooth booking, clear communication, and reliable customer care.",
     icon: friendly,
   },
   {
     id: 4,
     title: "Modern Laundry Solutions",
+    desc: "Efficient laundry services designed for busy homes, commercial clients, and regular business collections.",
     description:
-      "Efficient systems and careful handling help us deliver reliable laundry service every time.",
+      "Efficient laundry services designed for busy homes, commercial clients, and regular business collections.",
     icon: modern,
   },
   {
     id: 5,
-    title: "Fresh & Hygienic Finish",
+    title: "Fresh & Neat Finish",
+    desc: "Laundry is returned clean, fresh-smelling, folded, ironed where needed, and ready for daily or business use.",
     description:
-      "Your laundry is returned clean, fresh-smelling, and neatly prepared for immediate use.",
+      "Laundry is returned clean, fresh-smelling, folded, ironed where needed, and ready for daily or business use.",
     icon: refresh,
   },
   {
     id: 6,
     title: "Pickup & Delivery Convenience",
+    desc: "Save time with convenient laundry collection and delivery across Coventry for homes and businesses.",
     description:
-      "Save time with easy collection and delivery designed around your daily schedule.",
+      "Save time with convenient laundry collection and delivery across Coventry for homes and businesses.",
     icon: truck,
+  },
+];
+
+export const commercialServices = [
+  {
+    id: 1,
+    title: "Care Homes & Nursing Homes",
+    image: secondary1,
+    desc: "Hygienic laundry services for care homes and nursing homes, including bedding, towels, resident clothing, and daily-use fabrics.",
+  },
+  {
+    id: 2,
+    title: "Catering & Hospitality",
+    image: secondary2,
+    desc: "Commercial laundry for restaurants, cafés, catering companies, and hospitality businesses, including table linens, aprons, and uniforms.",
+  },
+  {
+    id: 3,
+    title: "Commercial & Industrial Businesses",
+    image: secondary3,
+    desc: "Bulk laundry solutions for workplaces, industrial teams, cleaning companies, and businesses needing reliable fabric care.",
+  },
+  {
+    id: 4,
+    title: "Hotels & Guest Houses",
+    image: secondary4,
+    desc: "Hotel laundry service for bedding, towels, pillow covers, guest linens, and room fabrics with consistent quality and fast turnaround.",
+  },
+  {
+    id: 5,
+    title: "Restaurants & Food Businesses",
+    image: secondary5,
+    desc: "Reliable laundry care for restaurant uniforms, chef coats, aprons, tablecloths, napkins, and kitchen fabrics.",
+  },
+  {
+    id: 6,
+    title: "Nurseries & Schools",
+    image: secondary6,
+    desc: "Safe and hygienic cleaning for school uniforms, nursery bedding, towels, soft fabrics, and children’s daily-use items.",
+  },
+  {
+    id: 7,
+    title: "Sports Clubs & Gyms",
+    image: secondary7,
+    desc: "Specialist laundry for sports kits, gym towels, team uniforms, training wear, and high-use fabrics.",
+  },
+  {
+    id: 8,
+    title: "Staff Uniforms & Workwear",
+    image: secondary8,
+    desc: "Professional uniform laundry and ironing service to keep your team clean, fresh, and presentable every day.",
   },
 ];
 
@@ -163,7 +240,7 @@ export const testimonial = [
     role: "Regular Customer",
     image: userProfile,
     review:
-      "Excellent service and very convenient pickup. My clothes always come back fresh, neat, and perfectly folded.",
+      "Excellent laundry service in Coventry. My clothes always come back fresh, clean, and neatly folded.",
     rating: 5,
   },
   {
@@ -172,7 +249,7 @@ export const testimonial = [
     role: "Busy Professional",
     image: userProfile,
     review:
-      "The express service is a lifesaver. Reliable, quick, and the quality has been consistently great.",
+      "The pickup and delivery service is very convenient. Fast, reliable, and great quality every time.",
     rating: 5,
   },
   {
@@ -181,61 +258,11 @@ export const testimonial = [
     role: "Family Customer",
     image: userProfile,
     review:
-      "Friendly team, easy booking process, and very good care for delicate items. Highly recommended.",
+      "Friendly team and very professional laundry care. Perfect for bedding, blankets, and everyday clothes.",
     rating: 5,
   },
 ];
 
-export const commercialServices = [
-  {
-    id: 1,
-    title: "Care Homes & Nursing Homes",
-    image: secondary1,
-    desc: "Reliable laundry services ensuring hygiene, comfort, and care for residents with consistent quality.",
-  },
-  {
-    id: 2,
-    title: "Catering & Hospitality",
-    image: secondary2,
-    desc: "Professional cleaning for linens, uniforms, and kitchen fabrics to maintain high service standards.",
-  },
-  {
-    id: 3,
-    title: "Commercial & Industrial Businesses",
-    image: secondary3,
-    desc: "Durable and efficient laundry solutions tailored for large-scale operations and heavy-duty fabrics.",
-  },
-  {
-    id: 4,
-    title: "Hotels & Guest Services",
-    image: secondary4,
-    desc: "Premium laundry care for bedding, towels, and guest essentials with quick turnaround and quality finish.",
-  },
-  {
-    id: 5,
-    title: "Hotels & Guest Services",
-    image: secondary5,
-    desc: "Consistent and high-quality laundry service designed to meet hospitality industry expectations.",
-  },
-  {
-    id: 6,
-    title: "Nurseries & Schools",
-    image: secondary6,
-    desc: "Safe and hygienic cleaning for uniforms, bedding, and daily-use fabrics for children’s environments.",
-  },
-  {
-    id: 7,
-    title: "Sports Clubs",
-    image: secondary7,
-    desc: "Specialized cleaning for sportswear, kits, and towels to maintain freshness and performance standards.",
-  },
-  {
-    id: 8,
-    title: "Staff Uniforms",
-    image: secondary8,
-    desc: "Professional cleaning and finishing for uniforms to keep your team looking sharp and presentable.",
-  },
-];
 export const navLinks = [
   {
     id: 1,
@@ -253,35 +280,42 @@ export const navLinks = [
     path: "/contact",
   },
 ];
+
 export const faqs = [
   {
     id: 1,
-    question: "How does pickup and delivery work?",
+    question: "Do you offer laundry pickup and delivery in Coventry?",
     answer:
-      "You can book online or call us. We collect your laundry, clean it, and deliver it back at your preferred time.",
+      "Yes, we offer laundry pickup and delivery in Coventry for homes, businesses, hotels, restaurants, care homes, and other commercial clients.",
   },
   {
     id: 2,
-    question: "What services do you offer?",
+    question: "Do you provide commercial laundry services?",
     answer:
-      "We provide wash & fold, ironing, dry cleaning, express services, and commercial laundry solutions.",
+      "Yes, we provide commercial laundry services for hotels, restaurants, care homes, schools, gyms, sports clubs, and companies needing regular laundry support.",
   },
   {
     id: 3,
-    question: "How long does it take?",
+    question: "What laundry services do you offer?",
     answer:
-      "Standard service takes 24–48 hours. Express service is available for faster delivery.",
+      "We offer wash and dry, ironing, express laundry, blankets and covers cleaning, pickup and delivery, self-service laundry, and bulk commercial laundry.",
   },
   {
     id: 4,
-    question: "Do you handle delicate fabrics?",
+    question: "How long does laundry service take?",
     answer:
-      "Yes, we carefully treat delicate garments using suitable cleaning methods.",
+      "Standard laundry service usually takes 24–48 hours. Express laundry service is available for customers who need a faster turnaround.",
   },
   {
     id: 5,
-    question: "How can I contact you?",
+    question: "Can you clean hotel bedding, towels, and restaurant linens?",
     answer:
-      "You can contact us via phone, WhatsApp, or through the website contact form.",
+      "Yes, we clean hotel bedding, towels, restaurant table linens, aprons, uniforms, workwear, and other commercial fabrics.",
+  },
+  {
+    id: 6,
+    question: "How can I book a laundry service?",
+    answer:
+      "You can book through the website contact form, call us, or message us on WhatsApp to arrange pickup, delivery, or service details.",
   },
 ];

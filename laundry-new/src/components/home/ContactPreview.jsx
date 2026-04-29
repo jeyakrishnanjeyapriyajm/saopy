@@ -12,7 +12,7 @@ export default function ContactPreview() {
   );
 
   return (
-    <AnimatedSection className="section-space pt-0 ">
+    <AnimatedSection className="section-space pt-0">
       <div className="container-custom">
         <div className="overflow-hidden rounded-[36px] bg-white shadow-[0_24px_60px_rgba(21,74,151,0.14)]">
           <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
@@ -23,12 +23,12 @@ export default function ContactPreview() {
               </h2>
 
               <p className="mt-8 text-[18px] text-white/85">
-                We’re here to help with bookings, service questions, and pickup
-                requests.
+                Book laundry pickup and delivery in Coventry for homes,
+                restaurants, hotels, care homes, uniforms, bedding, towels, and
+                commercial laundry.
               </p>
 
               <div className="mt-12 space-y-9">
-                {/* PHONE */}
                 <div className="flex items-start gap-4">
                   <div className="icon-badge">
                     <FiPhone className="text-[20px] text-[var(--color-secondary)]" />
@@ -39,7 +39,6 @@ export default function ContactPreview() {
                   </div>
                 </div>
 
-                {/* EMAIL */}
                 <div className="flex items-start gap-4">
                   <div className="icon-badge">
                     <FiMail className="text-[20px] text-[var(--color-secondary)]" />
@@ -52,7 +51,6 @@ export default function ContactPreview() {
                   </div>
                 </div>
 
-                {/* ADDRESS */}
                 <div className="flex items-start gap-4">
                   <div className="icon-badge">
                     <FiMapPin className="text-[20px] text-[var(--color-secondary)]" />
@@ -66,7 +64,6 @@ export default function ContactPreview() {
                 </div>
               </div>
 
-              {/* HOURS */}
               <div className="mt-12 border-t border-white/30 pt-6">
                 <h3 className="text-lg text-white">Service Hours</h3>
 
@@ -92,14 +89,15 @@ export default function ContactPreview() {
               </div>
             </div>
 
-            {/* RIGHT PANEL (FORM) */}
+            {/* RIGHT PANEL */}
             <div className="bg-[#f7f7f7] px-8 py-10 md:px-12 md:py-14">
               <h2 className="text-[32px] text-brand md:text-[40px]">
-                Send Us a Message
+                Book Laundry Pickup
               </h2>
 
               <p className="mt-4 text-[16px] text-muted">
-                Fill out the form below and we will get back shortly.
+                Fill out the form below for laundry pickup and delivery in
+                Coventry.
               </p>
 
               <form onSubmit={handleSubmit} className="mt-10">
@@ -110,22 +108,27 @@ export default function ContactPreview() {
                     onChange={handleChange}
                     placeholder="Full Name"
                     className="input-ui"
+                    required
                   />
 
                   <input
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Email Address"
                     className="input-ui"
+                    required
                   />
 
                   <input
+                    type="tel"
                     name="phone_number"
                     value={formData.phone_number}
                     onChange={handleChange}
                     placeholder="Phone Number"
                     className="input-ui"
+                    required
                   />
 
                   <select
@@ -133,29 +136,59 @@ export default function ContactPreview() {
                     value={formData.service_type}
                     onChange={handleChange}
                     className="input-ui"
+                    required
                   >
-                    <option>Wash </option>
-                    <option>Ironing</option>
-                    <option>Pickup & Delivery</option>
+                    <option value="">Select Service Type</option>
+                    <option value="Wash & Dry">Wash & Dry</option>
+                    <option value="Ironing Service">Ironing Service</option>
+                    <option value="Pickup & Delivery">Pickup & Delivery</option>
+                    <option value="Commercial Laundry">
+                      Commercial Laundry
+                    </option>
+                    <option value="Hotel / Restaurant Laundry">
+                      Hotel / Restaurant Laundry
+                    </option>
+                    <option value="Care Home Laundry">Care Home Laundry</option>
+                    <option value="Uniform & Workwear Laundry">
+                      Uniform & Workwear Laundry
+                    </option>
                   </select>
                 </div>
 
-                <input
-                  name="pickup_address"
-                  value={formData.pickup_address}
-                  onChange={handleChange}
-                  placeholder="Pickup Address"
-                  className="input-ui mt-6"
-                />
+                <div className="mt-6 grid gap-6 md:grid-cols-2">
+                  <input
+                    name="pickup_address"
+                    value={formData.pickup_address}
+                    onChange={handleChange}
+                    placeholder="Pickup Address"
+                    className="input-ui"
+                    required
+                  />
+
+                  <input
+                    type="text"
+                    name="postcode"
+                    value={formData.postcode || ""}
+                    onChange={handleChange}
+                    placeholder="Postcode e.g. CV3 5HW"
+                    className="input-ui"
+                    required
+                  />
+                </div>
 
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Message"
+                  placeholder="Tell us your laundry quantity, pickup time, or business laundry needs"
                   rows={4}
                   className="input-ui mt-6 resize-none"
                 />
+
+                <p className="mt-3 text-xs text-muted">
+                  We serve Coventry areas including CV1, CV2, CV3, CV4, CV5, and
+                  CV6.
+                </p>
 
                 <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center">
                   <button
@@ -170,7 +203,7 @@ export default function ContactPreview() {
                       </>
                     ) : (
                       <>
-                        Send Message
+                        Submit Pickup Request
                         <span className="btn-icon">
                           <ArrowRight className="h-4 w-4" />
                         </span>
@@ -179,7 +212,7 @@ export default function ContactPreview() {
                   </button>
 
                   <a
-                    href="https://wa.me/+447731830701"
+                    href="https://wa.me/447731830701"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-[16px] font-semibold text-brand"

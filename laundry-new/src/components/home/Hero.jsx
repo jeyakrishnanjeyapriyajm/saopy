@@ -332,12 +332,10 @@ export default function Hero() {
                 onSubmit={handleSubmit}
                 className="flex-1 space-y-4 overflow-y-auto px-4 py-4 sm:px-6 sm:py-5"
               >
+                {/* NAME + PHONE */}
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label
-                      className="mb-2 block text-sm font-semibold"
-                      style={{ color: "var(--color-text)" }}
-                    >
+                    <label className="mb-2 block text-sm font-semibold">
                       Full Name
                     </label>
                     <input
@@ -352,10 +350,7 @@ export default function Hero() {
                   </div>
 
                   <div>
-                    <label
-                      className="mb-2 block text-sm font-semibold"
-                      style={{ color: "var(--color-text)" }}
-                    >
+                    <label className="mb-2 block text-sm font-semibold">
                       Phone Number
                     </label>
                     <input
@@ -370,12 +365,10 @@ export default function Hero() {
                   </div>
                 </div>
 
+                {/* EMAIL + SERVICE */}
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label
-                      className="mb-2 block text-sm font-semibold"
-                      style={{ color: "var(--color-text)" }}
-                    >
+                    <label className="mb-2 block text-sm font-semibold">
                       Email Address
                     </label>
                     <input
@@ -390,10 +383,7 @@ export default function Hero() {
                   </div>
 
                   <div>
-                    <label
-                      className="mb-2 block text-sm font-semibold"
-                      style={{ color: "var(--color-text)" }}
-                    >
+                    <label className="mb-2 block text-sm font-semibold">
                       Service Type
                     </label>
                     <select
@@ -403,7 +393,7 @@ export default function Hero() {
                       className="input-ui"
                       required
                     >
-                      <option value="Wash ">Wash</option>
+                      <option value="Wash & Dry">Wash & Dry</option>
                       <option value="Ironing">Ironing</option>
                       <option value="Pickup & Delivery">
                         Pickup & Delivery
@@ -415,29 +405,42 @@ export default function Hero() {
                   </div>
                 </div>
 
-                <div>
-                  <label
-                    className="mb-2 block text-sm font-semibold"
-                    style={{ color: "var(--color-text)" }}
-                  >
-                    Pickup Address
-                  </label>
-                  <input
-                    type="text"
-                    name="pickup_address"
-                    value={formData.pickup_address}
-                    onChange={handleChange}
-                    placeholder="Enter pickup address"
-                    className="input-ui"
-                    required
-                  />
+                {/* ADDRESS + POSTCODE (NEW) */}
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-semibold">
+                      Pickup Address
+                    </label>
+                    <input
+                      type="text"
+                      name="pickup_address"
+                      value={formData.pickup_address}
+                      onChange={handleChange}
+                      placeholder="Street / Area"
+                      className="input-ui"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-semibold">
+                      Postcode
+                    </label>
+                    <input
+                      type="text"
+                      name="postcode"
+                      value={formData.postcode || ""}
+                      onChange={handleChange}
+                      placeholder="e.g. CV3 5HW"
+                      className="input-ui"
+                      required
+                    />
+                  </div>
                 </div>
 
+                {/* MESSAGE */}
                 <div>
-                  <label
-                    className="mb-2 block text-sm font-semibold"
-                    style={{ color: "var(--color-text)" }}
-                  >
+                  <label className="mb-2 block text-sm font-semibold">
                     Message
                   </label>
                   <textarea
@@ -451,11 +454,18 @@ export default function Hero() {
                   />
                 </div>
 
+                {/* SEO LOCATION TEXT */}
+                <p className="text-xs text-muted">
+                  We serve Coventry areas including CV1, CV2, CV3, CV4, CV5 and
+                  CV6.
+                </p>
+
+                {/* BUTTONS */}
                 <div className="flex flex-col gap-3 pt-2 sm:flex-row">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="primary-btn flex w-full items-center justify-center gap-2 disabled:opacity-70 sm:w-auto"
+                    className="primary-btn flex w-full items-center justify-center gap-2 sm:w-auto disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <>
@@ -465,9 +475,7 @@ export default function Hero() {
                     ) : (
                       <>
                         Submit Request
-                        <span className="btn-icon">
-                          <ArrowRight className="h-4 w-4" />
-                        </span>
+                        <ArrowRight className="h-4 w-4" />
                       </>
                     )}
                   </button>
@@ -475,12 +483,7 @@ export default function Hero() {
                   <button
                     type="button"
                     onClick={handleClosePopup}
-                    disabled={isSubmitting}
-                    className="w-full rounded-full border px-6 py-3 text-sm font-semibold transition hover:bg-slate-50 disabled:opacity-70 sm:w-auto"
-                    style={{
-                      borderColor: "var(--color-border)",
-                      color: "var(--color-primary)",
-                    }}
+                    className="w-full rounded-full border px-6 py-3 sm:w-auto"
                   >
                     Cancel
                   </button>
