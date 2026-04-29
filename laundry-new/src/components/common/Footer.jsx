@@ -98,7 +98,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="mt-10 border-t border-slate-300 py-5 text-center text-xs text-muted mb-20">
-          © 2026 Soapy. All rights reserved.
+          © 2026 Soapy Suds Shine Laundry. All rights reserved.
         </div>
       </div>
 

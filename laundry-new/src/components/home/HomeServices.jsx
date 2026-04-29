@@ -32,7 +32,7 @@ export default function HomeServices() {
         <Container>
           <SectionTitle
             title="How Our Service Works"
-            subtitle="A simple and convenient laundry process designed for busy homes and businesses."
+            subtitle="Enjoy flexible laundry options — walk in anytime for self-service washing or hand over your laundry for our professional service wash. Designed for busy homes and businesses."
           />
 
           <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">

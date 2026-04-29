@@ -32,7 +32,7 @@ const staggerWrap = {
 const features = [
   { icon: Clock, text: "Same Day Service" },
   { icon: Shield, text: "Quality Guaranteed" },
-  { icon: Truck, text: "Free Pickup" },
+  { icon: Truck, text: "Click and Collect" },
 ];
 
 export default function Hero() {
