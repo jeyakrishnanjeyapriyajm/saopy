@@ -211,15 +211,27 @@ export default function ContactPreview() {
                     )}
                   </button>
 
-                  <a
-                    href="https://wa.me/447731830701"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const phone = "447731830701";
+
+                      const appLink = `whatsapp://send?phone=${phone}`;
+                      const webLink = `https://api.whatsapp.com/send?phone=${phone}`;
+
+                      // Try opening WhatsApp app
+                      window.location.href = appLink;
+
+                      // Fallback to web after delay
+                      setTimeout(() => {
+                        window.location.href = webLink;
+                      }, 1200);
+                    }}
                     className="flex items-center gap-3 text-[16px] font-semibold text-brand"
                   >
                     <FaWhatsapp className="text-[24px] text-[#25D366]" />
                     Chat on WhatsApp
-                  </a>
+                  </button>
                 </div>
               </form>
             </div>
