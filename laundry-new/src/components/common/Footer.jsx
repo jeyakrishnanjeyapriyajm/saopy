@@ -1,21 +1,48 @@
-import { logo, insta, fb, twitter, utube } from "../../assets";
-import { FiMapPin, FiPhone, FiMail, FiClock } from "react-icons/fi";
+import { logo } from "../../assets";
+import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 
-const socialMap = {
-  insta,
-  fb,
-  twitter,
-  utube,
-};
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+  FaWhatsapp,
+  FaTiktok,
+} from "react-icons/fa";
+
+const socialLinks = [
+  // {
+  //   key: "insta",
+  //   icon: <FaInstagram />,
+  //   url: "https://instagram.com/yourpage",
+  // },
+  {
+    key: "fb",
+    icon: <FaFacebookF />,
+    url: "https://www.facebook.com/share/1CTfvpzpDM/",
+  },
+  {
+    key: "whatsapp",
+    icon: <FaWhatsapp />,
+    url: "https://wa.me/447731830701",
+  },
+  {
+    key: "tiktok",
+    icon: <FaTiktok />,
+    url: "https://www.tiktok.com/@soapy.suds.shine?_r=1&_t=ZN-95xtjJfPTd8",
+  },
+  // {
+  //   key: "youtube",
+  //   icon: <FaYoutube />,
+  //   url: "https://youtube.com/yourchannel",
+  // },
+];
 
 export default function Footer() {
-  const socialIcons = ["insta", "fb", "twitter", "utube"];
-
   return (
     <footer className="relative overflow-hidden bg-[#e3eef8] pt-12 sm:pt-14">
       <div className="container-custom px-4 sm:px-6 relative z-10">
         <div className="grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Logo + Description */}
+          {/* Logo */}
           <div>
             <img src={logo} alt="Soapy" className="mb-5 h-12 w-auto" />
             <p className="text-sm leading-7 text-muted">
@@ -25,7 +52,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
             <h4 className="mb-5 text-lg font-semibold text-brand">
               Contact Info
@@ -56,7 +83,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Opening Hours */}
+          {/* Hours */}
           <div>
             <h4 className="mb-5 text-lg font-semibold text-brand">
               Opening Hours
@@ -83,13 +110,15 @@ export default function Footer() {
             <h4 className="mb-5 text-lg font-semibold text-brand">Follow Us</h4>
 
             <div className="flex items-center gap-3">
-              {socialIcons.map((key) => (
+              {socialLinks.map((item) => (
                 <a
-                  key={key}
-                  href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md transition hover:-translate-y-1"
+                  key={item.key}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md text-brand text-lg transition hover:-translate-y-1 hover:scale-110"
                 >
-                  <img src={socialMap[key]} alt={key} className="h-5 w-5" />
+                  {item.icon}
                 </a>
               ))}
             </div>
@@ -101,15 +130,6 @@ export default function Footer() {
           © 2026 Soapy Suds Shine Laundry. All rights reserved.
         </div>
       </div>
-
-      {/* Background Text
-      <div className="pointer-events-none absolute bottom-[-10px] left-0 w-full overflow-hidden sm:bottom-[-20px] md:bottom-[-35px] lg:bottom-[-50px]">
-        <div className="flex justify-center px-4">
-          <h2 className="text-center font-extrabold leading-none tracking-tight text-brand/10 text-[48px] xs:text-[60px] sm:text-[90px] md:text-[120px] lg:text-[160px]">
-            Soapy Suds
-          </h2>
-        </div>
-      </div> */}
     </footer>
   );
 }
