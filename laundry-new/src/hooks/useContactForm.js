@@ -27,13 +27,6 @@ export default function useContactForm(options = {}) {
     }));
   };
 
-  const setField = (name, value) => {
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
   const resetForm = () => {
     setFormData(initialFormData);
   };
@@ -61,7 +54,7 @@ export default function useContactForm(options = {}) {
       !payload.postcode ||
       !payload.message
     ) {
-      toast.error("Please fill in all fields, including postcode.");
+      toast.error("Please fill in all fields.");
       return;
     }
 
@@ -69,8 +62,7 @@ export default function useContactForm(options = {}) {
       const result = await submitContactForm(payload).unwrap();
 
       toast.success(
-        result?.message ||
-          "Your laundry pickup request has been sent successfully."
+        result?.message || "Your pickup request has been sent successfully."
       );
 
       if (resetAfterSubmit) {
@@ -97,6 +89,5 @@ export default function useContactForm(options = {}) {
     handleSubmit,
     isSubmitting: isLoading,
     resetForm,
-    setField,
   };
 }
