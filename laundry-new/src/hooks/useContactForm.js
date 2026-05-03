@@ -46,6 +46,7 @@ export default function useContactForm(options = {}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.stopPropagation();
 
     const payload = {
       full_name: formData.full_name.trim(),
@@ -74,20 +75,28 @@ export default function useContactForm(options = {}) {
       const result = await submitContactForm(payload).unwrap();
 
       toast.success(
-        result?.message || "Your laundry pickup request has been sent successfully."
+        result?.message ||
+          "Your laundry pickup request has been sent successfully."
       );
 
-      if (resetAfterSubmit) resetForm();
-      if (typeof closeAfterSubmit === "function") closeAfterSubmit();
+      if (resetAfterSubmit) {
+        resetForm();
+      }
+
+      if (typeof closeAfterSubmit === "function") {
+        closeAfterSubmit();
+      }
 
       if (redirectTo) {
-        setTimeout(() => {
-          navigate(redirectTo);
-        }, 1000);
+        navigate(redirectTo);
       }
     } catch (error) {
+      console.error("Contact form submit error:", error);
+
       toast.error(
-        error?.data?.message || error?.message || "Something went wrong."
+        error?.data?.message ||
+          error?.message ||
+          "Something went wrong. Please try again."
       );
     }
   };
