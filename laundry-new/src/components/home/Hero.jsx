@@ -41,7 +41,6 @@ export default function Hero() {
 
   const { formData, handleChange, handleSubmit, isSubmitting, resetForm } =
     useContactForm({
-      redirectTo: "/thank-you",
       resetAfterSubmit: true,
       closeAfterSubmit: () => setIsPopupOpen(false),
     });

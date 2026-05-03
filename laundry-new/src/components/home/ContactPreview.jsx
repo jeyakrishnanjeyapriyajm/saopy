@@ -5,11 +5,8 @@ import { ArrowRight, Loader2 } from "lucide-react";
 import useContactForm from "../../hooks/useContactForm";
 
 export default function ContactPreview() {
-  const { formData, handleChange, handleSubmit, isSubmitting } = useContactForm(
-    {
-      redirectTo: "/thank-you",
-    },
-  );
+  const { formData, handleChange, handleSubmit, isSubmitting } =
+    useContactForm();
 
   return (
     <AnimatedSection className="section-space pt-0">

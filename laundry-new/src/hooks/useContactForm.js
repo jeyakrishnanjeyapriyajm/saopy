@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useSubmitContactFormMutation } from "../api/contactApi";
 
@@ -14,13 +13,8 @@ const initialFormData = {
 };
 
 export default function useContactForm(options = {}) {
-  const {
-    redirectTo = "/thank-you",
-    resetAfterSubmit = true,
-    closeAfterSubmit = null,
-  } = options;
+  const { resetAfterSubmit = true, closeAfterSubmit = null } = options;
 
-  const navigate = useNavigate();
   const [submitContactForm, { isLoading }] = useSubmitContactFormMutation();
   const [formData, setFormData] = useState(initialFormData);
 
@@ -85,10 +79,6 @@ export default function useContactForm(options = {}) {
 
       if (typeof closeAfterSubmit === "function") {
         closeAfterSubmit();
-      }
-
-      if (redirectTo) {
-        navigate(redirectTo);
       }
     } catch (error) {
       console.error("Contact form submit error:", error);
