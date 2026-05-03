@@ -13,7 +13,10 @@ const initialFormData = {
 };
 
 export default function useContactForm(options = {}) {
-  const { resetAfterSubmit = true, closeAfterSubmit = null } = options;
+  const {
+    resetAfterSubmit = true,
+    closeAfterSubmit = null,
+  } = options;
 
   const [submitContactForm, { isLoading }] = useSubmitContactFormMutation();
   const [formData, setFormData] = useState(initialFormData);
@@ -27,43 +30,55 @@ export default function useContactForm(options = {}) {
     }));
   };
 
+  const setField = (name, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   const resetForm = () => {
     setFormData(initialFormData);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const payload = {
-      full_name: formData.full_name.trim(),
-      phone_number: formData.phone_number.trim(),
-      email: formData.email.trim(),
-      service_type: formData.service_type.trim(),
-      pickup_address: formData.pickup_address.trim(),
-      postcode: formData.postcode.trim(),
-      message: formData.message.trim(),
-    };
-
-    if (
-      !payload.full_name ||
-      !payload.phone_number ||
-      !payload.email ||
-      !payload.service_type ||
-      !payload.pickup_address ||
-      !payload.postcode ||
-      !payload.message
-    ) {
-      toast.error("Please fill in all fields.");
-      return;
+  const validateForm = () => {
+    if (!formData.full_name.trim()) {
+      toast.error("Please enter your full name");
+      return false;
     }
 
-    try {
-      const result = await submitContactForm(payload).unwrap();
+    if (!formData.phone_number.trim()) {
+      toast.error("Please enter your phone number");
+      return false;
+    }
 
-      toast.success(
-        result?.message || "Your pickup request has been sent successfully."
-      );
+    if (!formData.email.trim()) {
+      toast.error("Please enter your email");
+      return false;
+    }
+
+    if (!formData.pickup_address.trim()) {
+      toast.error("Please enter your pickup address");
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    if (isLoading) return;
+
+    if (!validateForm()) return;
+
+    try {
+      await submitContactForm(formData).unwrap();
+
+      toast.success("Message sent successfully!");
 
       if (resetAfterSubmit) {
         resetForm();
@@ -74,20 +89,19 @@ export default function useContactForm(options = {}) {
       }
     } catch (error) {
       console.error("Contact form submit error:", error);
-
       toast.error(
-        error?.data?.message ||
-          error?.message ||
-          "Something went wrong. Please try again."
+        error?.data?.message || "Something went wrong. Please try again."
       );
     }
   };
 
   return {
     formData,
+    setFormData,
     handleChange,
+    setField,
     handleSubmit,
-    isSubmitting: isLoading,
     resetForm,
+    isLoading,
   };
 }
