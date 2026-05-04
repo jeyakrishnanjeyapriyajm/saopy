@@ -7,9 +7,9 @@ export default function Services() {
   return (
     <MainLayout>
       <SEO
-        title="Laundry Services Coventry | Commercial, Ironing, Pickup & Delivery"
-        description="Explore professional laundry services in Coventry including wash and dry, ironing, express laundry, pickup and delivery, hotel laundry, restaurant laundry, care home laundry, uniforms, bedding, towels, and bulk commercial laundry."
-        keywords="laundry services Coventry, commercial laundry services UK, ironing service Coventry, wash and dry Coventry, express laundry Coventry, hotel laundry Coventry, restaurant laundry Coventry, uniform laundry service UK"
+        title="Laundry Services Coventry | Wash & Dry, Duvets, Pickup & Delivery"
+        description="Explore laundry services in Coventry including service wash, self service laundry, wash and dry, duvet cleaning, bedding laundry, towel cleaning, pet bedding laundry, same day laundry, express laundry, and pickup and delivery."
+        keywords="laundry services Coventry, laundry service Coventry, service wash Coventry, self service laundry Coventry, wash and dry Coventry, duvet cleaning Coventry, bedding laundry service Coventry, towel cleaning service Coventry, pet bedding laundry Coventry, same day laundry Coventry, express laundry service Coventry, laundry pickup and delivery Coventry, elderly laundry service Coventry, affordable wash and dry service in Coventry, where to wash duvets in Coventry, laundrette with large machines near Coventry"
         canonical="https://soapysudsshine.co.uk/services"
         ogImage="https://soapysudsshine.co.uk/og-image.jpg"
       />

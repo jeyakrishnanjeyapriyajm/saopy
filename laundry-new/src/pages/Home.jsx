@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Commercial Laundry Service Coventry | Pickup & Delivery UK"
-        description="Professional laundry service in Coventry, UK. We provide commercial and domestic laundry pickup and delivery for hotels, restaurants, care homes, schools, sports clubs, uniforms, bedding, towels, and bulk laundry."
-        keywords="laundry service Coventry, commercial laundry Coventry, laundry pickup Coventry, laundry delivery Coventry, hotel laundry service UK, restaurant laundry service UK, care home laundry service Coventry, ironing service Coventry"
+        title="Best Laundry Service Coventry | Soapy Suds Shine Laundry"
+        description="Soapy Suds Shine Laundry is a trusted local laundrette in Coventry offering service wash, self service laundry, wash and dry, duvet cleaning, bedding laundry, towel cleaning, same day laundry, and pickup and delivery."
+        keywords="laundrette Coventry, laundry service Coventry, launderette near me Coventry, best laundrette in Coventry, service wash Coventry, self service laundry Coventry, wash and dry Coventry, cheap laundry Coventry, best laundry Coventry, same day laundry Coventry, laundry pickup and delivery Coventry, free laundry collection Coventry, CV3 laundry service, friendly laundrette Coventry, affordable laundry Coventry"
         canonical="https://soapysudsshine.co.uk/"
         ogImage="https://soapysudsshine.co.uk/og-image.jpg"
       />

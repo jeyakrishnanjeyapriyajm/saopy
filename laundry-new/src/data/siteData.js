@@ -49,6 +49,18 @@ export const seoContent = {
 export const services = [
   {
     id: 1,
+    title: "Self Wash and Dry",
+    image: service3,
+    desc: "Visit our Coventry launderette and enjoy a clean, friendly, and relaxing self-service wash and dry experience. Bring your own detergent, wash at your convenience, and enjoy a comfortable environment.",
+    bullets: [
+      "Clean and easy-to-use self-service laundry",
+      "Wash and dry at your own convenience",
+      "Friendly launderette environment in Coventry",
+    ],
+  },
+
+  {
+    id: 3,
     title: "Blankets & Covers Laundry",
     image: service1,
     desc: "Professional cleaning for blankets, duvets, bed covers, bedding, and bulky household fabrics. Ideal for homes, hotels, guest houses, and care facilities in Coventry.",
@@ -69,17 +81,7 @@ export const services = [
       "Perfect for domestic and commercial customers",
     ],
   },
-  {
-    id: 3,
-    title: "Self Wash and Dry",
-    image: service3,
-    desc: "Visit our Coventry launderette and enjoy a clean, friendly, and relaxing self-service wash and dry experience. Bring your own detergent, wash at your convenience, and enjoy a comfortable environment.",
-    bullets: [
-      "Clean and easy-to-use self-service laundry",
-      "Wash and dry at your own convenience",
-      "Friendly launderette environment in Coventry",
-    ],
-  },
+  
   {
     id: 4,
     title: "Express Laundry Service",
