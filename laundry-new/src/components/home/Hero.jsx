@@ -415,7 +415,7 @@ export default function Hero() {
                       name="pickup_address"
                       value={formData.pickup_address}
                       onChange={handleChange}
-                      placeholder="Street / Area"
+                      placeholder="Pickup address"
                       className="input-ui"
                       required
                     />
