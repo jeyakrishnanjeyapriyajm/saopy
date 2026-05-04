@@ -36,27 +36,22 @@ export default function useContactForm(options = {}) {
       toast.error("Please enter your full name");
       return false;
     }
-
     if (!formData.phone_number.trim()) {
       toast.error("Please enter your phone number");
       return false;
     }
-
     if (!formData.email.trim()) {
       toast.error("Please enter your email");
       return false;
     }
-
     if (!formData.pickup_address.trim()) {
       toast.error("Please enter your pickup address");
       return false;
     }
-
     if (!formData.postcode.trim()) {
       toast.error("Please enter your postcode");
       return false;
     }
-
     return true;
   };
 
@@ -67,11 +62,15 @@ export default function useContactForm(options = {}) {
     if (isLoading) return;
     if (!validateForm()) return;
 
+    // ✅ Stop here if no backend — prevents popup
+    if (!import.meta.env.VITE_API_BASE_URL) {
+      toast.error("Service temporarily unavailable. Please call us directly.");
+      return;
+    }
+
     try {
       await submitContactForm(formData).unwrap();
-
       toast.success("Message sent successfully!");
-
       if (resetAfterSubmit) resetForm();
       if (typeof closeAfterSubmit === "function") closeAfterSubmit();
     } catch (error) {
