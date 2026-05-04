@@ -208,7 +208,7 @@ export default function ContactPreview() {
                     )}
                   </button>
 
-                  <button
+                  {/* <button
                     type="button"
                     onClick={() => {
                       const phone = "447731830701";
@@ -228,7 +228,7 @@ export default function ContactPreview() {
                   >
                     <FaWhatsapp className="text-[24px] text-[#25D366]" />
                     Chat on WhatsApp
-                  </button>
+                  </button> */}
                 </div>
               </form>
             </div>

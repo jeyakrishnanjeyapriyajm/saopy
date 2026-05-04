@@ -13,28 +13,18 @@ const initialFormData = {
 };
 
 export default function useContactForm(options = {}) {
-  const {
-    resetAfterSubmit = true,
-    closeAfterSubmit = null,
-  } = options;
+  const { resetAfterSubmit = true, closeAfterSubmit = null } = options;
 
   const [submitContactForm, { isLoading }] = useSubmitContactFormMutation();
   const [formData, setFormData] = useState(initialFormData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const setField = (name, value) => {
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const resetForm = () => {
@@ -62,17 +52,19 @@ export default function useContactForm(options = {}) {
       return false;
     }
 
+    if (!formData.postcode.trim()) {
+      toast.error("Please enter your postcode");
+      return false;
+    }
+
     return true;
   };
 
   const handleSubmit = async (e) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
+    e?.preventDefault();
+    e?.stopPropagation();
 
     if (isLoading) return;
-
     if (!validateForm()) return;
 
     try {
@@ -80,18 +72,11 @@ export default function useContactForm(options = {}) {
 
       toast.success("Message sent successfully!");
 
-      if (resetAfterSubmit) {
-        resetForm();
-      }
-
-      if (typeof closeAfterSubmit === "function") {
-        closeAfterSubmit();
-      }
+      if (resetAfterSubmit) resetForm();
+      if (typeof closeAfterSubmit === "function") closeAfterSubmit();
     } catch (error) {
       console.error("Contact form submit error:", error);
-      toast.error(
-        error?.data?.message || "Something went wrong. Please try again."
-      );
+      toast.error(error?.data?.message || "Something went wrong. Please try again.");
     }
   };
 
@@ -103,5 +88,6 @@ export default function useContactForm(options = {}) {
     handleSubmit,
     resetForm,
     isLoading,
+    isSubmitting: isLoading,
   };
 }

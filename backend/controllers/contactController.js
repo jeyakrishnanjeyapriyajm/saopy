@@ -2,11 +2,20 @@ const {
   sendBusinessEmail,
   sendCustomerEmail,
 } = require("../services/mailService");
+
 const { appendContactRow } = require("../utils/googleSheets");
 
 exports.handleContactForm = async (req, res) => {
   try {
-    const data = req.body;
+    const data = {
+      full_name: req.body.full_name?.trim(),
+      phone_number: req.body.phone_number?.trim(),
+      email: req.body.email?.trim(),
+      service_type: req.body.service_type?.trim(),
+      pickup_address: req.body.pickup_address?.trim(),
+      postcode: req.body.postcode?.trim() || "",
+      message: req.body.message?.trim() || "No message provided",
+    };
 
     const {
       full_name,
@@ -14,45 +23,22 @@ exports.handleContactForm = async (req, res) => {
       email,
       service_type,
       pickup_address,
-      message,
     } = data;
 
-    if (
-      !full_name ||
-      !phone_number ||
-      !email ||
-      !service_type ||
-      !pickup_address ||
-      !message
-    ) {
+    if (!full_name || !phone_number || !email || !service_type || !pickup_address) {
       return res.status(400).json({
         success: false,
-        message: "All fields are required.",
+        message: "Please fill all required fields.",
       });
     }
 
-    try {
-      await sendBusinessEmail(data);
-      console.log("Business email sent");
-    } catch (err) {
-      console.error("Business email failed:", err.message);
-      throw new Error(`Business email failed: ${err.message}`);
-    }
-
-    try {
-      await sendCustomerEmail(data);
-      console.log("Customer email sent");
-    } catch (err) {
-      console.error("Customer email failed:", err.message);
-      throw new Error(`Customer email failed: ${err.message}`);
-    }
+    await sendBusinessEmail(data);
+    await sendCustomerEmail(data);
 
     try {
       await appendContactRow(data);
-      console.log("Google Sheet row added");
-    } catch (err) {
-      console.error("Google Sheet failed:", err.message);
-      throw new Error(`Google Sheet failed: ${err.message}`);
+    } catch (sheetError) {
+      console.error("Google Sheet failed:", sheetError.message);
     }
 
     return res.status(200).json({
@@ -60,10 +46,10 @@ exports.handleContactForm = async (req, res) => {
       message: "Request sent successfully",
     });
   } catch (err) {
-    console.error("MAIL / SHEET ERROR:", err);
+    console.error("CONTACT FORM ERROR:", err);
     return res.status(500).json({
       success: false,
-      message: err.message,
+      message: "Email sending failed. Please try again.",
     });
   }
 };
